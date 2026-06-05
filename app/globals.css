@@ -61,3 +61,114 @@ textarea {
   background: rgba(82, 109, 255, 0.4);
   color: white;
 }
+
+/* Aktueller Fokus – endloses Laufband */
+
+.focus-marquee {
+  position: relative;
+  width: 100%;
+  margin-top: 2.5rem;
+  overflow: hidden;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+.focus-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: focus-marquee-move-right 28s linear infinite;
+  will-change: transform;
+}
+
+.focus-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 5rem;
+  padding-right: 5rem;
+}
+
+.focus-marquee-item {
+  display: flex;
+  min-width: max-content;
+  align-items: center;
+  gap: 1rem;
+  color: #cbd5e1;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.focus-marquee-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+@keyframes focus-marquee-move-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .focus-marquee {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 18%,
+      black 82%,
+      transparent 100%
+    );
+
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 18%,
+      black 82%,
+      transparent 100%
+    );
+  }
+
+  .focus-marquee-track {
+    animation-duration: 20s;
+  }
+
+  .focus-marquee-group {
+    gap: 3rem;
+    padding-right: 3rem;
+  }
+
+  .focus-marquee-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .focus-marquee-item {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .focus-marquee-track {
+    animation-play-state: paused;
+  }
+}

@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
           <div>
             <Link href="/" className="text-xl font-bold tracking-tight text-white">
-              SERHAT<span className="text-indigo-400">.DEV</span>
+              SERHAT<span className="text-indigo-400">-DEV</span>
             </Link>
 
             <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">
@@ -57,7 +57,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-slate-500">
-          © 2025 SERHAT.DEV · Alle Rechte vorbehalten.
+          © 2025 SERHAT-DEV · Alle Rechte vorbehalten.
         </div>
       </div>
     </footer>

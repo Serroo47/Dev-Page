@@ -12,7 +12,7 @@ export function Header() {
     <header className="border-b border-white/10 bg-[#050816]/70 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 sm:px-6 lg:px-8">
         <Link href="/" className="text-xl font-bold tracking-tight text-white">
-          SERHAT<span className="text-indigo-400">.DEV</span>
+          SERHAT<span className="text-indigo-400">-DEV</span>
         </Link>
 
         <nav className="hidden items-center gap-10 md:flex">

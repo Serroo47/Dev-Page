@@ -2,13 +2,14 @@ import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { SectionTitle } from "@/components/SectionTitle";
 import { SiteShell } from "@/components/SiteShell";
-import { Tag } from "@/components/Tag";
 import {
   AppIcon,
   ArrowIcon,
   StructureIcon,
   WebsiteIcon,
 } from "@/components/Icons";
+import { FocusMarquee } from "@/components/FocusMarquee";
+import Image from "next/image";
 
 const whatIDo = [
   {
@@ -28,27 +29,21 @@ const whatIDo = [
   },
 ];
 
-const focusItems = [
-  "React",
-  "TypeScript",
-  "Angular",
-  "Tailwind CSS",
-  "Git",
-  "UI Design",
-];
-
 const projectIdeas = [
   {
     title: "Website-Konzepte",
     text: "Ideen und Konzepte für moderne Webseiten.",
+    image: "/images/project-previews/website-konzepte.png",
   },
   {
     title: "UI-Experimente",
     text: "Design-Experimente und Komponenten zum Üben.",
+    image: "/images/project-previews/ui-experimente.png",
   },
   {
     title: "Mini-Dashboards",
     text: "Kleine Dashboards mit Daten, Charts und Funktionen.",
+    image: "/images/project-previews/mini-dashboards.png",
   },
 ];
 
@@ -117,13 +112,13 @@ export default function HomePage() {
         </section>
 
         {/* Aktueller Fokus */}
-        <section className="mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
-          <SectionTitle title="Aktueller Fokus" />
+        <section className="py-12">
+          <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+            <SectionTitle title="Aktueller Fokus" />
+          </div>
 
-          <div className="mt-7 flex flex-wrap justify-center gap-3">
-            {focusItems.map((item) => (
-              <Tag key={item}>{item}</Tag>
-            ))}
+          <div className="mx-auto max-w-[1400px]">
+            <FocusMarquee />
           </div>
         </section>
 
@@ -134,20 +129,14 @@ export default function HomePage() {
           <div className="mt-8 grid gap-4 lg:grid-cols-3">
             {projectIdeas.map((project) => (
               <Card key={project.title} className="group overflow-hidden">
-                <div className="h-32 border-b border-white/10 bg-gradient-to-br from-indigo-500/20 via-white/[0.03] to-transparent p-4">
-                  <div className="h-full rounded-xl border border-white/10 bg-[#070A13]/70 p-4">
-                    <div className="mb-3 flex gap-1.5">
-                      <span className="h-2 w-2 rounded-full bg-white/30" />
-                      <span className="h-2 w-2 rounded-full bg-white/20" />
-                      <span className="h-2 w-2 rounded-full bg-white/10" />
-                    </div>
-
-                    <div className="space-y-2">
-                      <div className="h-3 w-2/3 rounded-full bg-indigo-400/50" />
-                      <div className="h-3 w-full rounded-full bg-white/10" />
-                      <div className="h-3 w-4/5 rounded-full bg-white/10" />
-                    </div>
-                  </div>
+                <div className="relative h-32 overflow-hidden border-b border-white/10 bg-[#080b18]">
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} Vorschau`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover transition duration-500 group-hover:scale-[1.04]"
+                  />
                 </div>
 
                 <div className="p-6">
