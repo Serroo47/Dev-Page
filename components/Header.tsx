@@ -52,7 +52,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`group relative py-2 text-sm font-medium transition duration-300 ${
+                  className={`group relative py-2 text-[15px] font-semibold tracking-[0.01em] transition duration-300 ${
                     active
                       ? "text-[#aebaff] drop-shadow-[0_0_10px_rgba(113,133,255,0.75)]"
                       : "text-slate-300 hover:text-white"
@@ -135,45 +135,24 @@ export function Header() {
         </div>
 
         <nav className="flex flex-1 flex-col gap-2 px-5 py-6">
-          {navItems.map((item, index) => {
+          {navItems.map((item) => {
             const active = isActive(item.href);
 
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setMenuOpen(false)}
                 aria-current={active ? "page" : undefined}
-                style={{
-                  transitionDelay: menuOpen
-                    ? `${120 + index * 60}ms`
-                    : "0ms",
-                }}
-                className={`group relative flex items-center justify-between overflow-hidden rounded-2xl border px-5 py-4 text-base font-medium transition-all duration-500 ${
-                  menuOpen
-                    ? "translate-x-0 opacity-100"
-                    : "translate-x-8 opacity-0"
-                } ${
+                className={`relative rounded-lg px-3 py-2 text-[15px] font-semibold tracking-[0.01em] transition-all duration-200 ${
                   active
-                    ? "border-[#7185ff]/30 bg-[#526dff]/12 text-[#b8c2ff] shadow-[0_0_28px_rgba(82,109,255,0.1)]"
-                    : "border-transparent text-slate-300 hover:border-white/10 hover:bg-white/[0.04] hover:text-white"
+                    ? "bg-white/[0.07] text-white"
+                    : "text-slate-400 hover:bg-white/[0.045] hover:text-slate-100"
                 }`}
               >
-                <span>{item.label}</span>
-
-                <span
-                  className={`text-xl transition duration-300 group-hover:translate-x-1 ${
-                    active ? "text-[#8fa0ff]" : "text-slate-600"
-                  }`}
-                >
-                  →
-                </span>
+                {item.label}
 
                 {active && (
-                  <>
-                    <span className="absolute bottom-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-[#7185ff] to-transparent shadow-[0_0_12px_rgba(113,133,255,0.8)]" />
-                    <span className="absolute left-0 top-1/2 h-8 w-0.5 -translate-y-1/2 rounded-full bg-[#7185ff] shadow-[0_0_12px_rgba(113,133,255,0.9)]" />
-                  </>
+                  <span className="absolute inset-x-3 -bottom-px h-px rounded-full bg-white/45" />
                 )}
               </Link>
             );

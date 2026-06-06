@@ -36,7 +36,7 @@ const projectIdeas = [
   {
     title: "Website-Konzepte",
     text: "Ideen und Konzepte für moderne Webseiten.",
-    image: "/images/project-previews/website.png",
+    image: "/images/project-previews/concept.png",
   },
   {
     title: "UI-Experimente",
