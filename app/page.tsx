@@ -238,6 +238,7 @@ export default function HomePage() {
   );
 }
 
+{/* Hero-Visual mit Glows, Code-Card und Browser-Animation*/ }
 function HeroVisual() {
   return (
     <div className="relative mx-auto h-[300px] w-full max-w-[620px] sm:h-[380px] lg:h-[390px]">

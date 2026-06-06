@@ -24,10 +24,6 @@ export function Header() {
   }
 
   useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
 
     return () => {

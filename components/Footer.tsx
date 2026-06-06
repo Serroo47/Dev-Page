@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "@/components/animation/Reveal";
+import Image from "next/image";
 
 const navItems = [
   { label: "Start", href: "/" },
@@ -108,7 +109,14 @@ export function Footer() {
                     className="group flex items-center gap-3 text-sm text-slate-300 transition duration-300 hover:text-[#91a0ff]"
                   >
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-[#7185ff] transition duration-300 group-hover:border-[#7185ff]/35 group-hover:bg-[#526dff]/10">
-                      <img src={item.icon} alt={item.value} className="h-full w-full object-contain" />
+                      <Image
+                      src={item.icon}
+                      alt=""
+                      width={20}
+                      height={20}
+                      aria-hidden="true"
+                      className="h-5 w-5 object-contain"
+                    />
                     </span>
 
                     <span>{item.value}</span>
